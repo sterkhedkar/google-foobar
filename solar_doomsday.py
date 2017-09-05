@@ -1,4 +1,3 @@
-import math
 
 #  Recursive function 
 def answer(area):
@@ -7,8 +6,8 @@ def answer(area):
 	elif(check_if_perfect_square(area)):
 		answer_list.append(area)
 	else:
-		smaller_number = int(math.sqrt(area))
-		smaller_perfect_square = smaller_number*smaller_number
+		smaller_number = int(area ** 0.5)
+		smaller_perfect_square = smaller_number ** 2 
 		diff = area - smaller_perfect_square
 		answer_list.append(smaller_perfect_square)
 		answer(diff)
