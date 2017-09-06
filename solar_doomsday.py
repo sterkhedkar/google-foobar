@@ -1,4 +1,4 @@
-
+import time
 #  Recursive function 
 def answer(area):
 	if(area<1 or area>100000):
@@ -7,7 +7,7 @@ def answer(area):
 		answer_list.append(area)
 	else:
 		smaller_number = int(area ** 0.5)
-		smaller_perfect_square = smaller_number ** 2 
+		smaller_perfect_square = smaller_number *  smaller_number 
 		diff = area - smaller_perfect_square
 		answer_list.append(smaller_perfect_square)
 		answer(diff)
@@ -23,8 +23,14 @@ def check_if_perfect_square(num):
 		i+=2
 	return False
 	
-#  Working all of the possible range specified in the problem.
-for i in range(1, 100001):
+#  Working out on all of the possible range specified in the problem.
+
+start = time.clock()
+
+for i in range(1,1000):
 	answer_list = []
 	answer(i)
-	print answer_list
+	#print answer_list
+
+end = time.clock()
+print "%.2gs" % (end-start)
